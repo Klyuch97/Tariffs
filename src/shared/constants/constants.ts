@@ -1,9 +1,9 @@
 import { SidebarNavItem, TariffFeature } from 'shared/types/types';
 
 export const NAV_ITEMS: SidebarNavItem[] = [
-  { label: 'Тарифы', href: '/', icon: 'database', active: true },
-  { label: 'Связаться с нами', href: '/', icon: 'phone' },
-  { label: 'Документы', href: '/', icon: 'folder' },
+  { label: 'Тарифы', href: '/Tariffs', icon: 'database', active: true },
+  { label: 'Связаться с нами', href: '/Tariffs', icon: 'phone' },
+  { label: 'Документы', href: '/Tariffs', icon: 'folder' },
 ];
 
 export const TARIFF_FEATURES: TariffFeature[] = [
