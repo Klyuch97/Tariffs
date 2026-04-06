@@ -28,7 +28,7 @@ export function TariffFeatureCard({ icon, label, active, disabled }: TariffFeatu
         />
       </div>
       <p className={styles.label}>{label}</p>
-      {disabled && <img className={styles.comingSoonImg} src={commingSoonSrc} alt="coming soon" />}
+      {disabled && <img width={42} height={35} className={styles.comingSoonImg} src={commingSoonSrc} alt="coming soon" />}
     </article>
   );
 }
