@@ -1,0 +1,68 @@
+@use 'shared/styles/mixins' as *;
+
+.totalCostOfAccessTitle {
+  @include content-block;
+  @include option-text;
+
+  margin: 17px auto 0;
+
+  @include mobile {
+    margin-left: 14px;
+  }
+}
+
+.totalCostOfAccessWrapper {
+  @include content-block;
+
+  display: grid;
+  grid-template-columns: 150px 200px 200px;
+  gap: 8px;
+  justify-content: space-between;
+  margin: 11px auto 37px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    padding: 0 14px;
+    margin: 25px auto 15px;
+
+    .priceBlock:nth-child(1) {
+      width: 150px;
+    }
+
+    .priceBlock:nth-child(2) {
+      width: 200px;
+      margin-top: 8px;
+    }
+
+    .priceBlock:nth-child(3) {
+      width: 200px;
+    }
+  }
+}
+
+.priceBlock {
+  @include tariff-price-block-column;
+}
+
+.priceItem {
+  @include price-card(var(--color-gray-70));
+}
+
+.priceItemTextRegular {
+  @include tariff-price-amount-regular;
+}
+
+.rubleIcon {
+  @include icon-absolute-right;
+}
+
+.priceItemText {
+  @include option-text($size: 10px, $weight: 500, $line-height: 16px);
+
+  color: var(--color-gray-40);
+}
+
+.withBorder {
+  border: 1px solid var(--color-gray-30);
+}

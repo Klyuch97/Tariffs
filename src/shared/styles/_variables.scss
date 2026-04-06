@@ -1,0 +1,28 @@
+// брейкпоинты для медиазапросов
+$bp-md: 768px;
+$bp-xl: 950px;
+
+// Шрифты
+$font-sans: 'Inter', sans-serif;
+$max-width-page: 1920px;
+$sidebar-width: 250px;
+$max-width-content: 693px;
+
+:root {
+  --color-black: #202123;
+  --color-white: #fff;
+  --primary-main-30: #005eb8;
+  --primary-main-40: #006fd8;
+
+  // TODO: не нашел в макете имя переменной для этого цвета e7e8ea
+  --color-gray-10: #e7e8ea;
+
+  // TODO: не нашел в макете имя переменной для этого цвета A3B1C6
+  --color-gray-20: #a3b1c6;
+  --color-gray-30: #6a6a73;
+  --color-gray-40: #898990;
+  --color-gray-50: #a0a1a9;
+  --color-gray-60: #dbdde1;
+  --color-gray-70: #f6f7f8;
+  --color-gray-100: #f2f3f5;
+}

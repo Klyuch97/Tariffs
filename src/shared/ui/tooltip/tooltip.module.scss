@@ -1,0 +1,10 @@
+@use 'shared/styles/mixins' as *;
+
+.tooltipContainer {
+  @include option-text($size: 14px, $weight: 600, $line-height: 20px, $letter-spacing: -0.5px);
+
+  padding: 6px 10px !important;
+  font-family: Inter, sans-serif;
+  color: var(--color-gray-30) !important;
+  border-radius: 10px !important;
+}

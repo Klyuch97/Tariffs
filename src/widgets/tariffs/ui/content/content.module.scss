@@ -1,0 +1,94 @@
+@use 'shared/styles/variables' as *;
+@use 'shared/styles/mixins' as *;
+
+.content {
+  @include center-content;
+
+  flex-direction: column;
+  width: calc(100% - $sidebar-width);
+  padding: 0 32px;
+  margin-left: $sidebar-width;
+
+  @include mobile {
+    width: 100%;
+    padding: 9px 15px 0;
+    margin-left: 0;
+  }
+}
+
+.title {
+  @include option-text($size: 40px, $weight: 700, $line-height: 48px, $letter-spacing: -0.2px);
+
+  width: 100%;
+  max-width: 905px;
+  margin: 74px auto 0;
+  color: var(--color-black);
+
+  @include mobile {
+    @include option-text($line-height: 140%, $letter-spacing: 2%);
+
+    margin: 0 auto;
+    color: #5a6a82;
+    text-align: center;
+  }
+}
+
+.infoTariff {
+  @include center-content;
+
+  flex-direction: column;
+  width: 100%;
+  max-width: 905px;
+  padding: 10px 0;
+  margin: 24px auto 15px;
+
+  @include surface-panel($radius: 12px, $border: 1px solid var(--color-gray-20));
+
+  & + & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .features {
+    @include center-content;
+
+    gap: 13px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 16px;
+
+    @include mobile {
+      max-height: 500px;
+      transition: all 0.3s ease;
+    }
+
+    &.featuresCollapsed {
+      @include mobile {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &Text {
+    @include option-text($size: 14px, $weight: 500, $line-height: 16px);
+
+    color: var(--color-gray-40);
+
+    &Span {
+      font-weight: 700;
+    }
+  }
+
+  @include mobile {
+    margin: 9px auto 15px;
+
+    .features {
+      padding: 0 7px;
+      margin-top: 10px;
+    }
+  }
+}

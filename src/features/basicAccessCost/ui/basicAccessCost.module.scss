@@ -1,0 +1,185 @@
+@use 'shared/styles/mixins' as *;
+
+.basicAccessCostWrapper {
+  @include content-block;
+  @include inset-bottom-divider;
+
+  padding-bottom: 9px;
+  margin: 0 auto;
+
+  @include mobile {
+    padding-bottom: 17px;
+  }
+}
+
+.basicAccessCostTitle {
+  @include content-block;
+  @include option-text;
+
+  margin: 0 auto;
+
+  @include mobile {
+    padding-left: 14px;
+  }
+}
+
+.priceWrapper {
+  @include content-block;
+
+  display: grid;
+  grid-template-columns: 190px 200px 200px;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 11px 0 14px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 7px 14px 28px;
+
+    > [data-tariff-auto-calc] {
+      width: 190px;
+    }
+
+    > .priceBlock {
+      width: 200px;
+    }
+  }
+}
+
+.priceBlock {
+  @include tariff-price-block-column;
+}
+
+.priceItem {
+  @include price-card(var(--color-gray-10));
+}
+
+.priceItemTextRegular {
+  @include tariff-price-amount-regular;
+}
+
+.priceItemText {
+  @include option-text($size: 10px, $weight: 500, $line-height: 16px);
+
+  color: var(--color-gray-40);
+}
+
+.rubleIcon {
+  @include icon-absolute-right;
+}
+
+.addInCostTextTitle {
+  @include option-text($size: 14px, $weight: 500);
+
+  margin: 0;
+  color: var(--color-black);
+}
+
+.addInCostTextDescription {
+  @include option-text($size: 14px, $weight: 500, $line-height: 140%, $letter-spacing: 2%);
+
+  margin: 0;
+  color: var(--color-gray-30);
+}
+
+.addInCostWrapper {
+  @include content-block;
+
+  display: grid;
+  grid-template-columns: minmax(80px, 80px) minmax(200px, 370px) minmax(120px, 190px);
+  gap: 8px;
+  justify-content: space-between;
+  padding: 12px 0 10px;
+
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 13px;
+    padding: 12px 14px 0;
+
+    > [data-tariff-auto-calc] {
+      flex: 1;
+      max-width: 180px;
+    }
+  }
+}
+
+.addInCostTextWrapper {
+  padding: 4px 0;
+
+  @include mobile {
+    flex: 1;
+    min-width: 190px;
+    padding: 0;
+  }
+}
+
+.tariffSelectRoot {
+  gap: 9px;
+  width: 80px;
+  height: 56px;
+  background-color: var(--color-gray-10);
+  border: none;
+  box-shadow: none !important;
+
+  @include mobile {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.tariffSelectContent {
+  flex: none !important;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-gray-30);
+  letter-spacing: -0.5px;
+}
+
+.tariffSelectSuffix {
+  font-size: 14px !important;
+  color: var(--color-gray-30) !important;
+
+  > span {
+    display: block !important;
+  }
+}
+
+.tariffSelectDropdown {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 16px 0 #0003;
+}
+
+.tariffSelectOption {
+  align-items: center;
+  height: 52px;
+  font-family: Inter;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: var(--color-gray-30) !important;
+  letter-spacing: -0.5px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+
+  &:hover:not([aria-disabled='true']) {
+    background-color: var(--color-gray-100) !important;
+  }
+
+  @include mobile {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.includedBenefitsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 5px auto;
+}
+
+.tooltipList {
+  padding-left: 14px;
+}

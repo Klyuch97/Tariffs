@@ -1,0 +1,67 @@
+@use 'shared/styles/mixins' as *;
+
+.periodSlider {
+  width: calc(100% - 20px);
+  margin: 0;
+  -webkit-tap-highlight-color: transparent !important;
+
+  @include mobile {
+    width: calc(100% - 30px);
+    margin: 0 15px;
+  }
+}
+
+.monthsPeriodSlider {
+  width: calc(100% - 34px);
+
+  @include mobile {
+    width: calc(100% - 30px);
+    margin: 0 15px;
+  }
+}
+
+.periodSliderRail {
+  height: 4px;
+  background-color: #0003 !important;
+  border-radius: 3px;
+}
+
+.periodSliderTrack {
+  height: 4px;
+  background-color: var(--primary-main-40) !important;
+  border-radius: 3px;
+}
+
+.periodSliderHandle {
+  &::after {
+    inset-block-start: -2px !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: var(--primary-main-40) !important;
+    border: none;
+    box-shadow: none !important;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    inset-block-start: -2px !important;
+    inset-inline-start: 0 !important;
+    width: 16px;
+    height: 16px;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.sliderWrapperDisabled {
+  .periodSliderHandle::after {
+    outline: none !important;
+    background-color: var(--color-gray-20) !important;
+    box-shadow: none !important;
+  }
+}
+
+.sliderWrapper {
+  position: relative;
+  padding: 20px 0 7px;
+}

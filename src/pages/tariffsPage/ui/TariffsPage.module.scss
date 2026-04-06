@@ -1,0 +1,27 @@
+@use 'shared/styles/variables' as *;
+@use 'shared/styles/mixins' as *;
+
+.layout {
+  position: relative;
+  max-width: $max-width-page;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+
+  @include mobile {
+    padding: 25px 20px;
+  }
+}
+
+.logoWrapper {
+  // TODO: Расположил по центру, по макету чуть не по центру
+  @include center-content;
+
+  height: 80px;
+}
+
+.logoImg {
+  width: 84px;
+  height: 30px;
+}

@@ -1,0 +1,33 @@
+@use 'shared/styles/mixins' as *;
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    'item icon'
+    'text .';
+  grid-template-columns: 1fr auto;
+  gap: 5px 20px;
+
+  @include mobile {
+    gap: 4px 10px;
+  }
+}
+
+.value {
+  @include price-card(var(--color-gray-10));
+
+  grid-area: item;
+}
+
+.text {
+  @include option-text($size: 10px, $weight: 500, $line-height: 16px);
+
+  grid-area: text;
+  margin: 0;
+  color: var(--color-gray-40);
+}
+
+.questionMarkIcon {
+  grid-area: icon;
+  align-self: center;
+}

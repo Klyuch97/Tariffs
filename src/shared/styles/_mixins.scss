@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+@mixin mobile {
+  @media (max-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin content-block {
+  width: 100%;
+  max-width: $max-width-content;
+}
+
+@mixin center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin option-text($size: 16px, $weight: 600, $line-height: 22px, $letter-spacing: -0.1px) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin price-card($bg) {
+  @include center-content;
+  @include option-text($line-height: 24px, $letter-spacing: -0.5px);
+
+  position: relative;
+  height: 56px;
+  color: var(--color-gray-30);
+  background-color: $bg;
+  border-radius: 8px;
+}
+
+@mixin icon-absolute-right($right: 18px) {
+  position: absolute;
+  top: 50%;
+  right: $right;
+  transform: translateY(-50%);
+}
+
+@mixin tariff-price-block-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@mixin tariff-price-amount-regular {
+  font-weight: 400;
+}
+
+@mixin surface-elevated-shadow {
+  box-shadow: 0 1px 8px 0 rgb(0 0 0 / 10%);
+}
+
+@mixin surface-panel($radius: 12px, $border: null, $with-shadow: false) {
+  background-color: var(--color-white);
+  border-radius: $radius;
+
+  @if $border {
+    border: $border;
+  }
+
+  @if $with-shadow {
+    @include surface-elevated-shadow;
+  }
+
+  @if $with-shadow == false {
+    box-shadow: none;
+  }
+}
+
+@mixin surface-card-elevated($radius: 12px) {
+  border-radius: $radius;
+
+  @include surface-elevated-shadow;
+}
+
+@mixin inset-bottom-divider($insetMobile: 14px, $insetDesktop: 0) {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: $insetDesktop;
+    bottom: 0;
+    left: $insetDesktop;
+    display: block;
+    content: '';
+    border-bottom: 1px solid var(--color-gray-60);
+  }
+
+  @include mobile {
+    &::after {
+      right: $insetMobile;
+      left: $insetMobile;
+    }
+  }
+}
